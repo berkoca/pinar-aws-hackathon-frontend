@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const REPORTS_URL = "http://10.214.214.82:8000/reports";
+const REPORTS_URL = "http://34.214.244.193:8000/reports";
 
 export async function GET() {
   try {

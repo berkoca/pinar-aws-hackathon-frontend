@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const ORDER_URL = "http://10.214.214.82:8000/order";
+const ORDER_URL = "http://34.214.244.193:8000/order";
 
 export async function POST(
   _req: Request,

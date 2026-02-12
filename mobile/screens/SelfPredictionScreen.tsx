@@ -8,7 +8,7 @@ import { Product, ApiResponse } from "@shared/types/product";
 
 const API_URL = "https://api.pinar.retter.io/3cn87h0si/CALL/Order/getHackathonOrders";
 const API_KEY = "aws-hackathon";
-const REPORTS_BASE = "http://10.214.214.82:8000/reports";
+const REPORTS_BASE = "http://34.214.244.193:8000/reports";
 
 function isCritical(p: Product) {
   if (p.critical_stock_value != null) return p.stock <= p.critical_stock_value;

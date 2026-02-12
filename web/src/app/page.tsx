@@ -33,7 +33,7 @@ export default function Home() {
           kadar stok çekmeniz gerektiğini önceden planlayın ve sipariş oluşturun.
         </p>
         <button
-          onClick={() => router.push("/self-prediction")}
+          onClick={() => router.push("/monitoring")}
           className="group bg-[var(--pinar-green-500)] text-white hover:bg-[var(--pinar-green-400)] font-semibold py-3 px-10 rounded-lg text-lg transition-all cursor-pointer shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center gap-2"
         >
           Başla

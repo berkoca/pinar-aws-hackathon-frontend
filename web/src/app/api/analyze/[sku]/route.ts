@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const ANALYZE_URL = "http://10.214.214.82:8000/analyze";
+const ANALYZE_URL = "http://34.214.244.193:8000/analyze";
 
 export async function POST(
   _req: Request,

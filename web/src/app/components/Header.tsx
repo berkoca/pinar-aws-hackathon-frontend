@@ -5,8 +5,9 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { href: "/self-prediction", label: "Analiz" },
   { href: "/monitoring", label: "Monitoring" },
+  { href: "/self-prediction", label: "Analiz" },
+
 ];
 
 export default function Header() {
@@ -28,11 +29,10 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  isActive
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${isActive
                     ? "bg-[var(--pinar-green-50)] text-[var(--pinar-green-500)]"
                     : "text-gray-600 hover:text-[var(--pinar-green-500)] hover:bg-gray-50"
-                }`}
+                  }`}
               >
                 {item.label}
               </Link>

@@ -12,7 +12,7 @@ type WsState = "connecting" | "connected" | "disconnected";
 type SkuLiveStatus = "pending" | "fetching" | "analyzing" | "done" | "error";
 type ToolActivity = { name: string; startedAt: number; endedAt?: number };
 
-const WS_URL = "ws://10.214.214.82:8000/ws";
+const WS_URL = "ws://34.214.244.193:8000/ws";
 
 function demandBadge(level: string | undefined | null) {
   const l = (level ?? "").toLowerCase();

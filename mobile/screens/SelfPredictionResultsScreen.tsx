@@ -4,8 +4,8 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../App";
 import { AnalysisReport } from "@shared/types/prediction";
 
-const ANALYZE_URL = "http://10.214.214.82:8000/analyze";
-const ORDER_URL = "http://10.214.214.82:8000/order";
+const ANALYZE_URL = "http://34.214.244.193:8000/analyze";
+const ORDER_URL = "http://34.214.244.193:8000/order";
 
 type Status = "loading" | "done" | "error";
 type OrderStatus = "idle" | "loading" | "done" | "error" | "already_ordered";
