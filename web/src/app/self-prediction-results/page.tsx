@@ -263,17 +263,18 @@ function ResultsContent() {
                         <button onClick={() => placeOrder(sku)} className="text-sm text-[var(--pinar-green-500)] hover:underline cursor-pointer">Tekrar Dene</button>
                       </div>
                     );
+                    const orderDisabled = os === "loading" || r.stock_remaining_day > 15;
                     return (
                       <button
                         onClick={(e) => { e.stopPropagation(); placeOrder(sku); }}
-                        disabled={os === "loading"}
+                        disabled={orderDisabled}
                         className={`px-12 py-4 rounded-xl font-semibold text-base transition-all cursor-pointer ${
                           r.needs_order
                             ? "bg-red-500 hover:bg-red-600 text-white shadow-md"
                             : "bg-[var(--pinar-green-500)] hover:bg-[var(--pinar-green-400)] text-white shadow-md"
                         } disabled:opacity-50 disabled:cursor-not-allowed`}
                       >
-                        {os === "loading" ? "Sipariş veriliyor..." : r.needs_order ? `⚠️ Sipariş Ver — ${Math.ceil(r.avg_daily_quantity * 30)} adet (Acil)` : `Sipariş Ver — ${Math.ceil(r.avg_daily_quantity * 30)} adet`}
+                        {os === "loading" ? "Sipariş veriliyor..." : r.stock_remaining_day > 15 ? "Sipariş gerekmiyor" : r.needs_order ? `⚠️ Sipariş Ver — ${Math.ceil(r.avg_daily_quantity * 30)} adet (Acil)` : `Sipariş Ver — ${Math.ceil(r.avg_daily_quantity * 30)} adet`}
                         {os !== "loading" && (
                           <svg className="w-4 h-4 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />

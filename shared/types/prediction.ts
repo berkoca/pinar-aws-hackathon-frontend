@@ -17,15 +17,24 @@ export type ProductPrediction = {
 
 export type AnalysisReport = {
   sku: string;
-  critical_stock_value: number;
-  stock_end_date: string;
-  stock_remaining_day: number;
-  avg_daily_quantity: number;
-  recommended_discount: number;
-  recommended_price: number;
-  demand_level: string;
-  action_plan: string[];
-  weekly_trend_pct: number;
+  current_stock?: number;
+  total_orders?: number;
+  total_quantity?: number;
   total_revenue: number;
+  avg_price?: number;
+  recommended_price: number;
+  recommended_discount: number;
+  discount_reason?: string;
+  avg_daily_quantity: number;
+  peak_daily_quantity?: number;
+  min_daily_quantity?: number;
+  demand_level: string;
+  weekly_trend_pct: number;
+  critical_stock_value: number;
+  stock_remaining_day: number;
+  stock_end_date: string;
+  action_plan: string[];
+  daily_trend?: Record<string, number>;
+  time_range?: { earliest: string; latest: string };
   needs_order?: boolean;
 };

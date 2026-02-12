@@ -199,13 +199,13 @@ export default function SelfPredictionResultsScreen({ route }: Props) {
                 );
                 return (
                   <TouchableOpacity
-                    style={[styles.orderBtn, r.needs_order && styles.orderBtnUrgent]}
+                    style={[styles.orderBtn, r.needs_order && styles.orderBtnUrgent, r.stock_remaining_day > 15 && styles.orderBtnDisabled]}
                     onPress={() => placeOrder(sku)}
-                    disabled={os === "loading"}
+                    disabled={os === "loading" || r.stock_remaining_day > 15}
                     activeOpacity={0.7}
                   >
                     <Text style={styles.orderBtnText}>
-                      {os === "loading" ? "Sipariş veriliyor..." : r.needs_order ? `⚠️ Sipariş Ver — ${Math.ceil(r.avg_daily_quantity * 30)} adet (Acil)  →` : `Sipariş Ver — ${Math.ceil(r.avg_daily_quantity * 30)} adet  →`}
+                      {os === "loading" ? "Sipariş veriliyor..." : r.stock_remaining_day > 15 ? "Sipariş gerekmiyor" : r.needs_order ? `⚠️ Sipariş Ver — ${Math.ceil(r.avg_daily_quantity * 30)} adet (Acil)  →` : `Sipariş Ver — ${Math.ceil(r.avg_daily_quantity * 30)} adet  →`}
                     </Text>
                   </TouchableOpacity>
                 );
@@ -245,6 +245,7 @@ const styles = StyleSheet.create({
   orderWarningText: { fontSize: 13, fontWeight: "600", color: "#dc2626" },
   orderBtn: { marginTop: 12, backgroundColor: "#47A141", borderRadius: 12, paddingVertical: 14, alignItems: "center", shadowColor: "#000", shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.1, shadowRadius: 3, elevation: 2 },
   orderBtnUrgent: { backgroundColor: "#ef4444" },
+  orderBtnDisabled: { opacity: 0.5 },
   orderBtnText: { color: "#fff", fontSize: 14, fontWeight: "700" },
   orderDone: { marginTop: 12, flexDirection: "row", alignItems: "center", justifyContent: "center", paddingVertical: 10 },
   orderDoneText: { color: "#47A141", fontSize: 14, fontWeight: "600" },
