@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+:root {
+  --pinar-green-500: #47A141;
+  --pinar-green-400: #5CB85C;
+  --pinar-green-300: #7FCC7F;
+  --pinar-green-200: #A8DDA8;
+  --pinar-green-100: #D4EED4;
+  --pinar-green-50: #EDF7ED;
+  --pinar-dark: #1a2e1a;
+  --pinar-gray: #f5f7f5;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
