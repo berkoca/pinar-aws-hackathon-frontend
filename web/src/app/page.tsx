@@ -25,12 +25,12 @@ export default function Home() {
         </div>
 
         <h1 className="text-4xl font-bold text-[var(--pinar-dark)] mb-4">
-          Demand Prediction System
+          AI Powered Demand Prediction System
         </h1>
         <p className="text-gray-600 text-lg mb-10 leading-relaxed">
           Gelecek haftalardaki satış taleplerini öngörün, depo stoklarınızı
           optimize edin. Yapay zeka destekli tahmin sistemiyle hangi üründen ne
-          kadar stok çekmeniz gerektiğini önceden planlayın.
+          kadar stok çekmeniz gerektiğini önceden planlayın ve sipariş oluşturun.
         </p>
         <button
           onClick={() => router.push("/self-prediction")}

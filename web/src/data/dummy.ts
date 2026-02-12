@@ -1,4 +1,4 @@
-import { ProductPrediction } from "@/types/prediction";
+import { ProductPrediction } from "@shared/types/prediction";
 
 export const dummyPredictions: ProductPrediction[] = [
   { product_id: "PRD-001", image: "https://placehold.co/80x80/e2e8f0/475569?text=P1", title: "Organik Süt 1L", stock: 320, price: "34.90", predited_total_stock: 1450, predict_periods: { week1: 400, week2: 380, week3: 350, week4: 320 } },

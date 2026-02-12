@@ -11,6 +11,20 @@
   --pinar-gray: #f5f7f5;
 }
 
+@keyframes stock-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.06); opacity: 0.85; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.stock-critical {
+  animation: stock-pulse 2s ease-in-out infinite;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
