@@ -275,14 +275,10 @@ export default function SelfPredictionPage() {
                   )}
                 </div>
 
-                {/* Stock Badge - sağ üst */}
-                <div className={`absolute top-3 right-3 z-10 w-16 h-16 rounded-full shadow-sm flex flex-col items-center justify-center ${badgeColor}`}>
-                  <span className="text-[9px] font-medium text-white/80 uppercase leading-none">Stok</span>
-                  <span className="text-xl font-bold text-white leading-tight">{p.stock}</span>
-                </div>
+                {/* Stock Badge - kaldırıldı, info bölümüne taşındı */}
 
                 {/* Product Image */}
-                <div className="bg-white flex items-center justify-center p-8 pt-20 w-56 shrink-0">
+                <div className="bg-white flex items-center justify-center p-8 pt-12 w-56 shrink-0">
                   <img
                     src={p.image}
                     alt={p.title}
@@ -291,7 +287,12 @@ export default function SelfPredictionPage() {
                 </div>
 
                 {/* Product Info */}
-                <div className="p-5 mt-3 flex flex-col justify-center flex-1 border-l border-gray-100">
+                <div className="relative p-5 pt-4 flex flex-col justify-center flex-1 border-l border-gray-100">
+                  {/* Stock Badge - content sağ üst */}
+                  <div className={`absolute top-3 right-3 w-14 h-14 rounded-full shadow-sm flex flex-col items-center justify-center ${badgeColor}`}>
+                    <span className="text-[8px] font-medium text-white/80 uppercase leading-none">Stok</span>
+                    <span className="text-lg font-bold text-white leading-tight">{p.stock}</span>
+                  </div>
                   <h3 className="font-semibold text-[var(--pinar-dark)] text-base leading-snug mb-1">
                     {p.title}
                   </h3>
